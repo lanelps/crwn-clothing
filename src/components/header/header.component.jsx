@@ -21,9 +21,12 @@ export default function Header({ currentUser }) {
           CONTACT
         </Link>
         {currentUser ? (
-          <div className='option' onClick={() => auth.signOut()}>
-            SIGN OUT
-          </div>
+          <React.Fragment>
+            <div>HI {currentUser.displayName.toUpperCase()}!</div>
+            <div className='option' onClick={() => auth.signOut()}>
+              SIGN OUT
+            </div>
+          </React.Fragment>
         ) : (
           <Link className='option' to='/signin'>
             SIGN IN
