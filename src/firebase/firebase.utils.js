@@ -3,20 +3,20 @@ import "firebase/firestore"
 import "firebase/auth"
 
 const config = {
-  apiKey: "AIzaSyCsup-SQ8aWCXB6Hp4k4kerOpEma9E5-Oc",
-  authDomain: "crwn-db-24600.firebaseapp.com",
-  databaseURL: "https://crwn-db-24600.firebaseio.com",
-  projectId: "crwn-db-24600",
-  storageBucket: "crwn-db-24600.appspot.com",
-  messagingSenderId: "704768570067",
-  appId: "1:704768570067:web:9ee17e62a737b736d69a26",
-  measurementId: "G-XC7GP4MLJN"
+  apiKey: "AIzaSyBj_BbEskWCK7h-lkMMxg5FzWRz7CMtZ0M",
+  authDomain: "crwn-clothing-2d30f.firebaseapp.com",
+  databaseURL: "https://crwn-clothing-2d30f.firebaseio.com",
+  projectId: "crwn-clothing-2d30f",
+  storageBucket: "crwn-clothing-2d30f.appspot.com",
+  messagingSenderId: "412920382714",
+  appId: "1:412920382714:web:645a6cd879c938e57df543",
+  measurementId: "G-3QK5GMQ0SQ"
 }
 
 export const createUserProfileDocument = async (userAuth, additionalData) => {
   if (!userAuth) return
 
-  const userRef = firestore.doc(`users/${userAuth}`)
+  const userRef = firestore.doc(`users/${userAuth.uid}`)
 
   const snapShot = await userRef.get()
 
